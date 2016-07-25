@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/com/bbva/krba/krbabusiness/online/service/CodigoError.java=UTF-8
+encoding//src/com/bbva/krba/krbabusiness/online/service/DocumentosOnlineDTO.java=UTF-8
+encoding//src/com/bbva/krba/krbabusiness/online/service/EntradaOnlineDTO.java=UTF-8
+encoding//src/com/bbva/krba/krbabusiness/online/service/OnlineService.java=UTF-8
+encoding//src/com/bbva/krba/krbabusiness/online/service/SalidaOnlineDTO.java=UTF-8
+encoding//src/com/bbva/krba/krbabusiness/online/service/Severidad.java=UTF-8
+encoding//src/com/bbva/krba/krbabusiness/online/service/WSBB_RBAONLINE.java=UTF-8
+encoding//src/com/bbva/krba/krbabusiness/online/service/WSBB_RBAONLINELocator.java=UTF-8
+encoding//src/com/bbva/krba/krbabusiness/online/service/WSBB_RBAONLINESoapBindingStub.java=UTF-8
+encoding//src/com/bbva/spring/gce/ErrorAplicacion.java=UTF-8
+encoding//src/com/bbva/spring/gce/Propiedad.java=UTF-8

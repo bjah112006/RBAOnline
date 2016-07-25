@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="WSBB_RBAONLINE" targetNamespace="http://service.online.krbabusiness.krba.bbva.com/" xmlns:ns1="http://bbva.com/spring/gce" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.online.krbabusiness.krba.bbva.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:tns="http://service.online.krbabusiness.krba.bbva.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://service.online.krbabusiness.krba.bbva.com/" version="1.0">
+
+  <xs:element name="getConsultaOnline" type="tns:getConsultaOnline"/>
+
+  <xs:element name="getConsultaOnlineResponse" type="tns:getConsultaOnlineResponse"/>
+
+  <xs:complexType name="getConsultaOnline">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:entradaOnlineDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="entradaOnlineDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actividad" type="xs:string"/>
+      <xs:element minOccurs="0" name="canal" type="xs:string"/>
+      <xs:element minOccurs="0" name="codigoCliente" type="xs:string"/>
+      <xs:element minOccurs="0" name="embajadas" type="xs:string"/>
+      <xs:element minOccurs="0" name="fechaAlta" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="fechaConstitucion" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="indPEP" type="xs:string"/>
+      <xs:element minOccurs="0" name="indRAA" type="xs:string"/>
+      <xs:element minOccurs="0" name="montoCheques" type="xs:long"/>
+      <xs:element minOccurs="0" name="montoDivisas" type="xs:long"/>
+      <xs:element minOccurs="0" name="montoEfectivo" type="xs:long"/>
+      <xs:element minOccurs="0" name="montoInternacional" type="xs:long"/>
+      <xs:element minOccurs="0" name="montoNacional" type="xs:long"/>
+      <xs:element minOccurs="0" name="ocupacion" type="xs:string"/>
+      <xs:element minOccurs="0" name="paisNacimiento" type="xs:string"/>
+      <xs:element minOccurs="0" name="paisNacionalidad" type="xs:string"/>
+      <xs:element minOccurs="0" name="paisOpera" type="xs:string"/>
+      <xs:element minOccurs="0" name="paisResidencia" type="xs:string"/>
+      <xs:element minOccurs="0" name="productoServicio" type="xs:string"/>
+      <xs:element minOccurs="0" name="riesgoExtra1" type="xs:int"/>
+      <xs:element minOccurs="0" name="riesgoExtra10" type="xs:int"/>
+      <xs:element minOccurs="0" name="riesgoExtra2" type="xs:int"/>
+      <xs:element minOccurs="0" name="riesgoExtra3" type="xs:int"/>
+      <xs:element minOccurs="0" name="riesgoExtra4" type="xs:int"/>
+      <xs:element minOccurs="0" name="riesgoExtra5" type="xs:int"/>
+      <xs:element minOccurs="0" name="riesgoExtra6" type="xs:int"/>
+      <xs:element minOccurs="0" name="riesgoExtra7" type="xs:int"/>
+      <xs:element minOccurs="0" name="riesgoExtra8" type="xs:int"/>
+      <xs:element minOccurs="0" name="riesgoExtra9" type="xs:int"/>
+      <xs:element minOccurs="0" name="segmento" type="xs:string"/>
+      <xs:element minOccurs="0" name="sucursal" type="xs:string"/>
+      <xs:element minOccurs="0" name="temporal" type="xs:string"/>
+      <xs:element minOccurs="0" name="tiempoResidente" type="xs:int"/>
+      <xs:element minOccurs="0" name="tipoJuridica" type="xs:string"/>
+      <xs:element minOccurs="0" name="tipoNacionalidad" type="xs:string"/>
+      <xs:element minOccurs="0" name="tipoPersona" type="xs:string"/>
+      <xs:element minOccurs="0" name="tipoProceso" type="xs:string"/>
+      <xs:element minOccurs="0" name="tipoResidencia" type="xs:string"/>
+      <xs:element minOccurs="0" name="uidPeticion" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getConsultaOnlineResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:salidaOnlineDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="salidaOnlineDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoCliente" type="xs:string"/>
+      <xs:element minOccurs="0" name="diligencia" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="documentos" nillable="true" type="tns:documentosOnlineDTO"/>
+      <xs:element minOccurs="0" name="riesgo" type="xs:string"/>
+      <xs:element minOccurs="0" name="uidPeticion" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="documentosOnlineDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="tipo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="codigoError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoAplicacion" type="xs:string"/>
+      <xs:element minOccurs="0" name="codigoModulo" type="xs:string"/>
+      <xs:element name="secuencia" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="severidad">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CRITICO"/>
+      <xs:enumeration value="ERROR"/>
+      <xs:enumeration value="FATAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
+<xs:schema xmlns:ns1="http://service.online.krbabusiness.krba.bbva.com/" xmlns:tns="http://bbva.com/spring/gce" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://bbva.com/spring/gce">
+  <xs:import namespace="http://service.online.krbabusiness.krba.bbva.com/"/>
+  <xs:complexType name="errorAplicacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoError" type="ns1:codigoError"/>
+      <xs:element minOccurs="0" name="severidad" type="ns1:severidad"/>
+      <xs:element minOccurs="0" name="descripcionUsuario" type="xs:string"/>
+      <xs:element minOccurs="0" name="descripcionTecnica" type="xs:string"/>
+      <xs:element minOccurs="0" name="metainfo" type="tns:Metainformacion"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Metainformacion">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="propiedad" type="tns:Propiedad"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Propiedad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+      <xs:element minOccurs="0" name="valor" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="errorAplicacion" nillable="true" type="tns:errorAplicacion"/>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ExcepcionAplicacion">
+    <wsdl:part name="ExcepcionAplicacion" element="ns1:errorAplicacion">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getConsultaOnline">
+    <wsdl:part name="parameters" element="tns:getConsultaOnline">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getConsultaOnlineResponse">
+    <wsdl:part name="parameters" element="tns:getConsultaOnlineResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="OnlineService">
+    <wsdl:operation name="getConsultaOnline">
+      <wsdl:input name="getConsultaOnline" message="tns:getConsultaOnline">
+    </wsdl:input>
+      <wsdl:output name="getConsultaOnlineResponse" message="tns:getConsultaOnlineResponse">
+    </wsdl:output>
+      <wsdl:fault name="ExcepcionAplicacion" message="tns:ExcepcionAplicacion">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSBB_RBAONLINESoapBinding" type="tns:OnlineService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getConsultaOnline">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getConsultaOnline">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getConsultaOnlineResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionAplicacion">
+        <soap:fault name="ExcepcionAplicacion" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSBB_RBAONLINE">
+    <wsdl:port name="OnlineServiceImplPort" binding="tns:WSBB_RBAONLINESoapBinding">
+      <soap:address location="http://localhost:9090/OnlineServiceImplPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
